@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <% include ../partials/nav %>
+
+    
+    <div class="container post post-show">
+        <% include ./partials/header %>
+
+
+        <div class="buttons">
+            <a class="btn btn-default" href="/posts" role="button">Back</a>
+            <a class="btn btn-default" href="/posts/<%= post._id %>/edit" role="button">Edit</a>
+            <form action="/posts/<%= post._id %>?_method=delete" method="post">
+                <button class="btn btn-default" type="button" role="button" onclick="confirm('삭제하겠습니까?')?this.parentElement.submit():null;">Delete</button>    
+            </form>
+        </div>
+
+        <div class="contentBox">
+            <h3 class="contentBoxTop"><%= post.title %></h3>
+            <div class="row">
+                
+                <div class="col-sm-4 col-sm-push-8">
+                    <div class="post-info">
+                        <div><span>Created</span>: <%= post.createdDate %>  <%= post.createdTime %></div>
+                        <% if(post.updatedAt) { %>
+                            <div><span>Updated</span>: <%= post.updatedDate %>  <%= post.updatedTime %></div>
+                        <% } %>
+                    </div>                    
+                </div>
+                
+                <div class="col-sm-8 col-sm-pull-4">
+                    <div class="post-body"><%= post.body %></div>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+        
+    <% include ../partials/footer %>
+</body>
+
+</html>

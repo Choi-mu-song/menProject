@@ -1,0 +1,17 @@
+.home h1 {
+  color: goldenrod; }
+
+.buttons form {
+  display: inline-block; }
+
+.post h2 {
+  color: tomato;
+  text-align: center; }
+
+.post .post-body {
+  white-space: pre-line; }
+
+.post .posts .date {
+  width: 100px; }
+
+/*# sourceMappingURL=style.css.map */
